@@ -1,0 +1,16 @@
+<h2>Thêm Sách Mới</h2>
+<form action="/books/add" method="POST">
+    <p>
+        <label>Mã sản phẩm (Bắt buộc bắt đầu bằng <b>{{prefix}}</b>):</label><br>
+        <input type="text" name="productCode" placeholder="Ví dụ: {{prefix}}_01" required style="width: 300px; padding: 6px;">
+    </p>
+    <p>
+        <label>Tên sách:</label><br>
+        <input type="text" name="name" required style="width: 300px; padding: 6px;">
+    </p>
+    <p>
+        <label>Giá gốc (VNĐ):</label><br>
+        <input type="number" name="price" required style="width: 300px; padding: 6px;">
+    </p>
+    <button type="submit" class="btn">Lưu sách lên Cloud</button>
+</form>

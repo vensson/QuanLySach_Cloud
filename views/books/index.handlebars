@@ -1,0 +1,20 @@
+<h2>Danh sách Sách trong Cơ sở dữ liệu</h2>
+{{#if success}}
+    <p style="color: green;"><b>Thêm sách thành công!</b></p>
+{{/if}}
+<table>
+    <tr>
+        <th>Mã sản phẩm</th>
+        <th>Tên sách</th>
+        <th>Giá gốc</th>
+        <th>Giá sau VAT ({{vatRate}}%)</th>
+    </tr>
+    {{#each books}}
+    <tr>
+        <td>{{this.productCode}}</td>
+        <td>{{this.name}}</td>
+        <td>{{this.price}} VNĐ</td>
+        <td style="color: green; font-weight: bold;">{{this.finalPrice}} VNĐ</td>
+    </tr>
+    {{/each}}
+</table>
