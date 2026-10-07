@@ -1,6 +1,6 @@
-const session = require('express-session');
-// const MongoStore = require('connect-mongo').default || require('connect-mongo');
-const connectMongo = require('connect-mongo');
+const session = require("express-session");
+const MongoStore = require("connect-mongo");
+
 function configSession() {
     return session({
         secret: process.env.SESSION_SECRET,
@@ -8,11 +8,11 @@ function configSession() {
         saveUninitialized: false,
         store: MongoStore.create({
             mongoUrl: process.env.MONGODB_SESSION_URI,
-            collectionName: 'sessions'
+            collectionName: "sessions"
         }),
         cookie: {
             httpOnly: true,
-            maxAge: 1000 * 60 * 60 // 1 giờ
+            maxAge: 1000 * 60 * 60
         }
     });
 }
