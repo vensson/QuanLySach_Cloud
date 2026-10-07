@@ -1,6 +1,6 @@
 const session = require('express-session');
-const MongoStore = require('connect-mongo');
-
+// const MongoStore = require('connect-mongo').default || require('connect-mongo');
+const connectMongo = require('connect-mongo');
 function configSession() {
     return session({
         secret: process.env.SESSION_SECRET,
